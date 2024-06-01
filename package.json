@@ -1,0 +1,19 @@
+{
+  "name": "oh-myfood",
+  "version": "1.0.0",
+  "description": "Ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "npx sass --watch ./sass/style.scss:./assets/css/style.css"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "js"
+  ],
+  "author": "Mamitiana",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.77.2"
+  }
+}
