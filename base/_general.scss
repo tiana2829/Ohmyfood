@@ -1,7 +1,6 @@
-.resto {
-  font: optional;
-  font-size: medium;
-}
+$font-logo: Shrikhand, sans-serif;
+$font-content: Roboto, sans-serif;
+
 $color-primary: #9356dc;
 $color-secondary: #ff79da;
 $color-background-lightgrey: #f6f6f6;
@@ -11,6 +10,12 @@ $color-white: #ffffff;
 $color-black: #353535;
 $color-lightgreen: #99e2d0;
 $color-green: #008766;
+
+@mixin centerElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 header {
   img {
