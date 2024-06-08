@@ -1,21 +1,10 @@
-.resto {
-  font: optional;
-  font-size: medium;
-}
-
-header img {
-  width: 162px;
-  height: 44px;
-  margin-top: auto;
-}
-
 .loader__container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ffffff;
+  background: $color-white;
   opacity: 0.7;
   z-index: 1000;
 }
@@ -32,7 +21,10 @@ header img {
   width: 60px;
   aspect-ratio: 1;
   background: linear-gradient(#dc1818 0 0) bottom/100% 0% no-repeat #ccc;
-  -webkit-mask: radial-gradient(circle at 60% 65%, #000 62%, rgba(0, 0, 0, 0) 65%) top left, radial-gradient(circle at 40% 65%, #000 62%, rgba(0, 0, 0, 0) 65%) top right, linear-gradient(to bottom left, #000 42%, rgba(0, 0, 0, 0) 43%) bottom left, linear-gradient(to bottom right, #000 42%, rgba(0, 0, 0, 0) 43%) bottom right;
+  -webkit-mask: radial-gradient(circle at 60% 65%, #000 62%, #0000 65%) top left,
+    radial-gradient(circle at 40% 65%, #000 62%, #0000 65%) top right,
+    linear-gradient(to bottom left, #000 42%, #0000 43%) bottom left,
+    linear-gradient(to bottom right, #000 42%, #0000 43%) bottom right;
   -webkit-mask-size: 50% 50%;
   -webkit-mask-repeat: no-repeat;
   animation: heartFill 3s infinite linear;
@@ -47,10 +39,12 @@ header img {
 }
 
 @keyframes heartFill {
-  90%, 100% {
+  90%,
+  100% {
     background-size: 100% 100%;
   }
 }
+
 @keyframes stopLoader {
   to {
     width: 0;
@@ -58,5 +52,3 @@ header img {
     visibility: hidden;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

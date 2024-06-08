@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+
     <script
       src="https://kit.fontawesome.com/fd61535574.js"
       crossorigin="anonymous"
@@ -11,6 +18,10 @@
     <title>Ohmyfood</title>
   </head>
   <body>
+    <!-- partie loader-->
+    <div class="loader__container" id="loader-wrap">
+      <div class="loader__content"></div>
+    </div>
     <header>
       <img src="assets\images\logo\ohmyfood.png" alt="logo header" />
       <div><i class="fa-solid fa-location-dot"></i> Paris, Belleville</div>
@@ -26,16 +37,18 @@
       <div class="fonctionnement">
         <h3>Fonctionnement</h3>
         <div class="commande">
-          <a href="#"
-            ><i class="fa-solid fa-mobile-screen-button"></i> Choisissez un
-            restaurant</a
-          >
-          <a href="#"
-            ><i class="fa-solid fa-list-ul"></i> Composez votre menu</a
-          >
-          <a href="#"
-            ><i class="fa-solid fa-store"></i> Dégustez au restaurant</a
-          >
+          <ol class="commande__list">
+            <li class="commande__item">
+              <i class="fa-solid fa-mobile-screen-button"></i> Choisissez un
+              restaurant
+            </li>
+            <li class="commande__item">
+              <i class="fa-solid fa-list-ul"></i> Composez votre menu
+            </li>
+            <li class="commande__item">
+              <i class="fa-solid fa-store"></i> Dégustez au restaurant
+            </li>
+          </ol>
         </div>
       </div>
       <div class="restaurants">
