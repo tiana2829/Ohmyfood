@@ -1,3 +1,9 @@
+* {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .loader__container {
   position: fixed;
   top: 0;
@@ -47,11 +53,26 @@
     visibility: hidden;
   }
 }
-.header__location {
+.location {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Roboto, sans-serif;
+  font-size: 1.5em;
+  gap: 5px;
+  padding: 30px;
   background: #eaeaea;
+}
+
+.menuWrapper {
+  text-align: center;
+  background-color: #f6f6f6;
+  padding: 1.4rem;
+  height: 260px;
+}
+.menuWrapper .menuDescription {
+  font-weight: 300;
+  margin: 2.2rem 0;
 }
 
 header {
@@ -65,7 +86,7 @@ header .logoHeader {
 header .logoHeader__logo {
   width: 162px;
   height: 44px;
-  margin-top: auto;
+  margin: 20px auto;
 }
 
 /*# sourceMappingURL=style.css.map */
