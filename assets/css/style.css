@@ -1,14 +1,3 @@
-.resto {
-  font: optional;
-  font-size: medium;
-}
-
-header img {
-  width: 162px;
-  height: 44px;
-  margin-top: auto;
-}
-
 .loader__container {
   position: fixed;
   top: 0;
@@ -57,6 +46,26 @@ header img {
     height: 0;
     visibility: hidden;
   }
+}
+.header__location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eaeaea;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .logoHeader {
+  background: #ffffff;
+}
+header .logoHeader__logo {
+  width: 162px;
+  height: 44px;
+  margin-top: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
