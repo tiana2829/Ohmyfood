@@ -72,3 +72,53 @@
     margin: 2.2rem 0;
   }
 }
+
+h3 {
+  @include centerElement;
+  font-size: 1.5em;
+  padding: 30px;
+}
+
+.fonctionnement {
+  @include centerElement;
+  .commande {
+    margin-top: 50px;
+  }
+}
+
+.commande__list {
+  counter-reset: compteListe;
+}
+
+.commande__item {
+  padding: 1.5rem;
+  margin: 1rem 0 1rem 0.75rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 13%);
+  border-radius: 1.25rem;
+  background-color: #f6f6f6;
+  display: flex;
+  position: relative;
+  &:before {
+    @include centerElement;
+    color: white;
+    counter-increment: compteListe 1;
+    content: counter(compteListe) " ";
+    background: $color-primary;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: translate(-50%, 50%);
+  }
+  &:hover {
+    background: linear-gradient(#cd9cf2 0%, #f6f3ff 100%);
+    .icon {
+      color: $color-primary;
+    }
+  }
+  .icon {
+    margin-right: 10px;
+  }
+}
