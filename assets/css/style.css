@@ -21,6 +21,60 @@ h3 {
   padding: 30px 30px 0 30px;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .logoHeader {
+  background: #ffffff;
+}
+header .logoHeader__logo {
+  width: 162px;
+  height: 44px;
+  margin: 20px auto;
+}
+
+footer {
+  background: #353535;
+  padding: 30px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer .title__footer {
+  text-align: left;
+  font-size: 36px;
+  font-style: italic;
+  font-family: Shrikhand, sans-serif;
+}
+footer .link__footer--item {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  text-align: left;
+}
+footer .link__footer a {
+  color: #ffffff;
+}
+
+.btnCallToAction {
+  color: #ffffff;
+  border-radius: 25px;
+  width: 186px;
+  padding: 15px;
+  top: 50px;
+  gap: 0px;
+  opacity: 0px;
+  font-size: 24px;
+  font-weight: 500;
+  transition: 0.3s;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+}
+
 .loader__container {
   position: fixed;
   top: 0;
@@ -205,60 +259,6 @@ h3 {
   justify-content: space-between;
   margin: 20px 20px auto 20px;
   color: #353535;
-}
-
-footer {
-  background: #353535;
-  padding: 30px;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-footer .title__footer {
-  text-align: left;
-  font-size: 36px;
-  font-style: italic;
-  font-family: Shrikhand, sans-serif;
-}
-footer .link__footer--item {
-  display: flex;
-  flex-direction: column;
-  color: #ffffff;
-  text-align: left;
-}
-footer .link__footer a {
-  color: #ffffff;
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header .logoHeader {
-  background: #ffffff;
-}
-header .logoHeader__logo {
-  width: 162px;
-  height: 44px;
-  margin: 20px auto;
-}
-
-.btnCallToAction {
-  color: #ffffff;
-  border-radius: 25px;
-  width: 186px;
-  padding: 15px;
-  top: 50px;
-  gap: 0px;
-  opacity: 0px;
-  font-size: 24px;
-  font-weight: 500;
-  transition: 0.3s;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
-  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
 }
 
 /*# sourceMappingURL=style.css.map */
