@@ -263,4 +263,25 @@ footer .link__footer a {
   color: #353535;
 }
 
-/*test footer*/
+.menuHeader {
+  display: block;
+}
+.menuHeader--items {
+  position: relative;
+}
+.menuHeader .arrowPrevious {
+  text-decoration: none;
+  color: #353535;
+  position: absolute;
+  font-size: 40px;
+  top: 15px;
+  left: 30px;
+  padding-right: 10px;
+}
+.menuHeader .menuHeader__title {
+  font-family: Shrikhand, sans-serif;
+  font-style: italic;
+  font-size: 36px;
+  text-align: center;
+  padding: 15px;
+}

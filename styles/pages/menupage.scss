@@ -1,0 +1,22 @@
+.menuHeader {
+  display: block;
+  &--items {
+    position: relative;
+  }
+  .arrowPrevious {
+    text-decoration: none;
+    color: $color-black;
+    position: absolute;
+    font-size: 40px;
+    top: 15px;
+    left: 30px;
+    padding-right: 10px;
+  }
+  .menuHeader__title {
+    font-family: $font-logo;
+    font-style: italic;
+    font-size: 36px;
+    text-align: center;
+    padding: 15px;
+  }
+}
