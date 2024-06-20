@@ -21,6 +21,7 @@ h3 {
   padding: 30px 30px 0 30px;
 }
 
+/*test*/
 header {
   display: flex;
   justify-content: center;
@@ -153,6 +154,7 @@ footer .link__footer a {
 }
 .fonctionnement .commande {
   margin-top: 20px;
+  width: 100%;
 }
 
 .commande__list {
@@ -160,10 +162,10 @@ footer .link__footer a {
 }
 
 .commande__item {
-  padding: 1.5rem;
-  margin: 1rem 0 1rem 0.75rem;
-  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.13);
-  border-radius: 1.25rem;
+  padding: 25px;
+  margin: 40px 25px 40px 25px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.13);
+  border-radius: 20px;
   background-color: #f6f6f6;
   display: flex;
   position: relative;
@@ -261,4 +263,4 @@ footer .link__footer a {
   color: #353535;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*test footer*/
