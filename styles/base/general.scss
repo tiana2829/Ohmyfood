@@ -37,4 +37,82 @@ h3 {
   font-size: 1.5em;
   padding: 30px 30px 0 30px;
 }
-/*test*/
+
+.heart__icon {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 5;
+  cursor: pointer;
+  position: relative;
+
+  svg {
+    overflow: visible;
+    width: 30px;
+  }
+
+  path {
+    stroke-dashoffset: 0;
+    transform-origin: center;
+  }
+
+  .heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
+  }
+
+  .heart-main:hover path {
+    animation: stroke-animation 0.4s ease-in-out forwards;
+  }
+
+  .heart-main:hover ~ .heart-background path {
+    animation: fade-animation 0.4s ease-in-out forwards;
+    stroke: none;
+  }
+}
+
+@keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 155;
+  }
+  60% {
+    stroke-dashoffset: 310;
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: $color-primary;
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    stroke-dashoffset: 310;
+    fill: $color-primary;
+  }
+}
+
+@keyframes fade-animation {
+  70% {
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: $color-primary;
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
