@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+body {
+  min-height: 200vh;
+  display: flex;
+  flex-direction: column;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -14,9 +20,6 @@ ol {
 }
 
 h3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 1.5em;
   padding: 30px 30px 0 30px;
 }
@@ -27,10 +30,12 @@ h3 {
   stroke-width: 5;
   cursor: pointer;
   position: relative;
+  margin-right: 85px;
 }
 .heart__icon svg {
   overflow: visible;
   width: 30px;
+  margin-right: 5px;
 }
 .heart__icon path {
   stroke-dashoffset: 0;
@@ -100,6 +105,7 @@ header {
 }
 header .logoHeader {
   background: #ffffff;
+  text-align: center;
 }
 header .logoHeader__logo {
   width: 162px;
@@ -108,19 +114,22 @@ header .logoHeader__logo {
 }
 
 footer {
+  width: 100%;
+  height: 200px;
   background: #353535;
-  padding: 30px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 footer .title__footer {
-  text-align: left;
+  margin-left: 15px;
+  padding: 15px;
   font-size: 36px;
   font-style: italic;
   font-family: Shrikhand, sans-serif;
+}
+footer .link__footer {
+  margin-left: 30px;
 }
 footer .link__footer--item {
   display: flex;
@@ -139,7 +148,6 @@ footer .link__footer a {
   padding: 15px;
   top: 50px;
   gap: 0px;
-  opacity: 0px;
   font-size: 24px;
   font-weight: 500;
   transition: 0.3s;
@@ -212,6 +220,7 @@ footer .link__footer a {
   background-color: #f6f6f6;
   padding: 1.4rem;
   height: 260px;
+  width: 100%;
 }
 .menuWrapper .menuDescription {
   font-weight: 300;
@@ -253,9 +262,9 @@ footer .link__footer a {
   height: 30px;
   border-radius: 50%;
   /*center element*/
+  position: absolute;
   top: 0;
   left: 0;
-  position: absolute;
   transform: translate(-50%, 50%);
 }
 .commande__item:hover {
@@ -268,7 +277,7 @@ footer .link__footer a {
   margin-right: 10px;
 }
 
-.restaurantContainer {
+.restaurantMain {
   background: #f6f6f6;
   margin-top: 30px;
 }
@@ -279,19 +288,17 @@ footer .link__footer a {
 
 .restaurant {
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .restaurant .restaurantWrapper {
-  max-width: 1280px;
   margin: auto;
   padding-bottom: 50px;
   position: relative;
+  width: 100%;
 }
 .restaurant .restaurantWrapper article {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   margin-top: 30px;
 }
 .restaurant .restaurantWrapper article .card {
@@ -299,8 +306,8 @@ footer .link__footer a {
   border-radius: 30px;
   border: 1px solid #f6f6f6;
   box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
-  width: 340px;
-  height: 250px;
+  width: 100%;
+  height: 550px;
   gap: 20px;
   opacity: 0px;
   text-decoration: none;
@@ -313,14 +320,14 @@ footer .link__footer a {
 .restaurant .restaurantWrapper article .restaurant__picture img {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  height: 150px;
-  width: 340px;
+  height: 350px;
+  width: 100%;
   object-fit: cover;
 }
 .restaurant .restaurantWrapper article .restaurant__picture span {
   position: absolute;
   top: 1rem;
-  right: 0.7rem;
+  right: 1.7rem;
   padding: 0.4rem;
   background: #99e2d0;
   color: #008766;
@@ -332,6 +339,12 @@ footer .link__footer a {
   justify-content: space-between;
   margin: 20px 20px auto 20px;
   color: #353535;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
 }
 
 .menuHeader {
@@ -357,8 +370,87 @@ footer .link__footer a {
   padding: 15px;
 }
 
+main {
+  background-color: #f6f6f6;
+  position: relative;
+}
 main img {
   width: 100%;
   max-height: 32rem;
   object-fit: cover;
+}
+main .menuContainer {
+  background-color: #f6f6f6;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  position: absolute;
+  margin-top: -150px;
+  width: 100%;
+}
+main .restaurantContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 37px;
+  border: 1px solid #f6f6f6;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+main .restaurantName {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+main .restaurantName h1 {
+  font-family: Shrikhand, sans-serif;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+}
+main .restaurantMenuTitle {
+  display: inline-flex;
+  justify-content: space-between;
+}
+main .titleMenu {
+  padding: 20px;
+  margin-right: 5px;
+}
+main .titleMenu h2 {
+  text-transform: uppercase;
+  font-weight: lighter;
+  border-bottom: 3px solid #99e2d0;
+  width: 9%;
+  line-height: 40px;
+}
+main .descriptionMenu {
+  background: #ffffff;
+  border: 1px solid #f6f6f6;
+  border-radius: 30px;
+  margin-block: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
+main .restaurantPrice {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+main .btnMenu {
+  padding: 90px;
+  text-align: center;
+  height: 90px;
+}
+
+.menuFooter {
+  position: absolute;
+  bottom: -150rem;
 }

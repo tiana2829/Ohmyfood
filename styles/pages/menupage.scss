@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
+}
+
 .menuHeader {
   display: block;
   &--items {
@@ -23,9 +29,88 @@
 
 // MAIN
 main {
+  background-color: $color-background-lightgrey;
+  // flex: 1;
+  position: relative;
   img {
     width: 100%;
     max-height: 32rem;
     object-fit: cover;
   }
+  .menuContainer {
+    background-color: $color-background-lightgrey;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    @include centerElement;
+    flex-direction: column;
+    flex: 1;
+    position: absolute;
+    margin-top: -150px;
+    width: 100%;
+  }
+  .restaurantContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 37px;
+    border: 1px solid $color-background-lightgrey;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  .restaurantName {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    h1 {
+      font-family: $font-logo;
+      font-size: 28px;
+      font-style: italic;
+      font-weight: 400;
+    }
+  }
+
+  .restaurantMenuTitle {
+    display: inline-flex;
+    justify-content: space-between;
+  }
+
+  .titleMenu {
+    padding: 20px;
+    margin-right: 5px;
+    h2 {
+      text-transform: uppercase;
+      font-weight: lighter;
+      border-bottom: 3px solid $color-lightgreen;
+      width: 9%;
+      line-height: 40px;
+    }
+  }
+  .descriptionMenu {
+    background: $color-white;
+    border: 1px solid $color-background-lightgrey;
+    border-radius: 30px;
+    margin-block: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .restaurantPrice {
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .btnMenu {
+    padding: 90px;
+    text-align: center;
+    height: 90px;
+  }
+}
+
+.menuFooter {
+  position: absolute;
+  bottom: -150rem;
 }
