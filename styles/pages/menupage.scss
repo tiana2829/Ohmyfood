@@ -1,9 +1,21 @@
-.container {
+// .container {
+//   border: 1px solid green;
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   height: 100%;
+// }
+body {
+  height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
-  height: 200vh;
+  width: 100%;
 }
-
+.container {
+  height: 95vh;
+}
 .menuHeader {
   display: block;
   &--items {
@@ -29,6 +41,7 @@
 
 // MAIN
 main {
+  height: 60vh;
   background-color: $color-background-lightgrey;
   // flex: 1;
   position: relative;
@@ -52,7 +65,6 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 37px;
     border: 1px solid $color-background-lightgrey;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -86,31 +98,94 @@ main {
       line-height: 40px;
     }
   }
+
+  .descriptionMenuWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .checkMenuWrapper {
+    background-color: $color-lightgreen;
+    width: 50px;
+    color: $color-white;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .checkMenu {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    color: black;
+  }
+
   .descriptionMenu {
+    min-width: 100%;
     background: $color-white;
     border: 1px solid $color-background-lightgrey;
     border-radius: 30px;
-    margin-block: 20px;
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
+    .dishWrapper {
+      margin-left: 10px;
+    }
   }
   .restaurantPrice {
     font-weight: bold;
     display: flex;
-    flex-direction: row;
     align-items: flex-end;
+    margin-right: 10px;
+    cursor: pointer;
+    &:hover,
+    &:active {
+      transform: translateX(-100px);
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+
+  .checkMenuWrapper {
+    width: fit-content;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+
+    background-color: $color-lightgreen;
+    margin-top: 18px;
+    width: 5rem;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.5s;
+  }
+
+  .checkMenu {
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    transition-duration: 0.5s;
+  }
+
+  // &:hover &__wrapIcon {
+  //   transform: rotate(0);
+  // }
+
+  .checkMenu {
+    color: $color-lightgreen;
+    font-size: 50px;
   }
 
   .btnMenu {
-    padding: 90px;
     text-align: center;
-    height: 90px;
+    min-height: 90px;
   }
 }
 
 .menuFooter {
-  position: absolute;
-  bottom: -150rem;
+  bottom: -90rem;
 }

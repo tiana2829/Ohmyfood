@@ -5,7 +5,7 @@
 }
 
 body {
-  min-height: 200vh;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
 }
@@ -114,6 +114,7 @@ header .logoHeader__logo {
 }
 
 footer {
+  position: absolute;
   width: 100%;
   height: 200px;
   background: #353535;
@@ -218,8 +219,8 @@ footer .link__footer a {
 .menuWrapper {
   text-align: center;
   background-color: #f6f6f6;
-  padding: 1.4rem;
-  height: 260px;
+  padding-top: 50px;
+  min-height: 250px;
   width: 100%;
 }
 .menuWrapper .menuDescription {
@@ -228,12 +229,11 @@ footer .link__footer a {
 }
 
 .fonctionnement {
+  background-color: #ffffff;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 .fonctionnement .commande {
-  margin-top: 20px;
   width: 100%;
 }
 
@@ -243,7 +243,7 @@ footer .link__footer a {
 
 .commande__item {
   padding: 25px;
-  margin: 40px 25px 40px 25px;
+  margin: 30px 15px 30px 15px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.13);
   border-radius: 20px;
   background-color: #f6f6f6;
@@ -279,7 +279,8 @@ footer .link__footer a {
 
 .restaurantMain {
   background: #f6f6f6;
-  margin-top: 30px;
+  position: absolute;
+  width: 100%;
 }
 
 .restaurant__title {
@@ -307,8 +308,7 @@ footer .link__footer a {
   border: 1px solid #f6f6f6;
   box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
   width: 100%;
-  height: 550px;
-  gap: 20px;
+  gap: 10px;
   opacity: 0px;
   text-decoration: none;
 }
@@ -320,7 +320,7 @@ footer .link__footer a {
 .restaurant .restaurantWrapper article .restaurant__picture img {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  height: 350px;
+  max-height: 250px;
   width: 100%;
   object-fit: cover;
 }
@@ -340,11 +340,24 @@ footer .link__footer a {
   margin: 20px 20px auto 20px;
   color: #353535;
 }
+.restaurant .restaurantWrapper article .restaurant__info .item {
+  margin-bottom: 20px;
+}
 
-.container {
+.homepageFooter {
+  bottom: -117rem;
+}
+
+body {
+  height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
-  height: 200vh;
+  width: 100%;
+}
+
+.container {
+  height: 95vh;
 }
 
 .menuHeader {
@@ -371,6 +384,7 @@ footer .link__footer a {
 }
 
 main {
+  height: 60vh;
   background-color: #f6f6f6;
   position: relative;
 }
@@ -396,7 +410,6 @@ main .restaurantContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 37px;
   border: 1px solid #f6f6f6;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -428,29 +441,79 @@ main .titleMenu h2 {
   width: 9%;
   line-height: 40px;
 }
+main .descriptionMenuWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+main .checkMenuWrapper {
+  background-color: #99e2d0;
+  width: 50px;
+  color: #ffffff;
+  overflow: hidden;
+  white-space: nowrap;
+}
+main .checkMenu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  color: black;
+}
 main .descriptionMenu {
+  min-width: 100%;
   background: #ffffff;
   border: 1px solid #f6f6f6;
   border-radius: 30px;
-  margin-block: 20px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
+}
+main .descriptionMenu .dishWrapper {
+  margin-left: 10px;
 }
 main .restaurantPrice {
   font-weight: bold;
   display: flex;
-  flex-direction: row;
   align-items: flex-end;
+  margin-right: 10px;
+  cursor: pointer;
+}
+main .restaurantPrice:hover, main .restaurantPrice:active {
+  transform: translateX(-100px);
+  transition: transform 0.5s ease-in-out;
+}
+main .checkMenuWrapper {
+  width: fit-content;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background-color: #99e2d0;
+  margin-top: 18px;
+  width: 5rem;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+main .checkMenu {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  transition-duration: 0.5s;
+}
+main .checkMenu {
+  color: #99e2d0;
+  font-size: 50px;
 }
 main .btnMenu {
-  padding: 90px;
   text-align: center;
-  height: 90px;
+  min-height: 90px;
 }
 
 .menuFooter {
-  position: absolute;
-  bottom: -150rem;
+  bottom: -90rem;
 }
