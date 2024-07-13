@@ -11,6 +11,57 @@ $color-black: #353535;
 $color-lightgreen: #99e2d0;
 $color-green: #008766;
 
+@mixin breakpoints($screen) {
+  @if $screen == mobile-down {
+    @media only screen and (min-width: 320px) and (max-width: 374px) {
+      @content;
+    }
+  }
+  @if $screen == mobile-small {
+    @media only screen and (min-width: 375px) and (max-width: 414px) {
+      @content;
+    }
+  }
+  @if $screen == mobile {
+    @media only screen and (min-width: 415px) and (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $screen == tablet {
+    @media (min-width: 769px) {
+      @content;
+    }
+  }
+
+  @if $screen == tablet-up {
+    @media (min-width: 769px) and (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @if $screen == desktop {
+    @media (min-width: 992px) and (max-width: 1023px) {
+      @content;
+    }
+  }
+  @if $screen == desktop-infinite {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+  @if $screen == desktop-up {
+    @media (min-width: 1024px) and (max-width: 1440px) {
+      @content;
+    }
+  }
+  @if $screen == desktop-large {
+    @media (min-width: 1441px) {
+      @content;
+    }
+  }
+}
+
 @mixin centerElement {
   display: flex;
   justify-content: center;
@@ -25,7 +76,9 @@ $color-green: #008766;
 
 body {
   box-sizing: border-box;
-  // min-height: 200vh;
+  // min-height: 100vh;
+  // max-width: 1440px;
+  // padding: 0 10px 0 10px;
   display: flex;
   flex-direction: column;
 }
@@ -56,7 +109,8 @@ h3 {
   stroke-width: 5;
   cursor: pointer;
   position: relative;
-  margin-right: 85px;
+  margin-right: 75px;
+  // margin-right: 10px;
 
   svg {
     overflow: visible;
@@ -147,7 +201,6 @@ header {
 
 footer {
   position: absolute;
-  // bottom: -96rem;
   width: 100%;
   height: 200px;
   background: $color-black;
@@ -155,12 +208,20 @@ footer {
   display: flex;
   flex-direction: column;
 
+  @include breakpoints(tablet) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
   .title__footer {
     margin-left: 15px;
     padding: 15px;
     font-size: 36px;
     font-style: italic;
     font-family: $font-logo;
+    @include breakpoints(tablet) {
+      margin-top: 40px;
+    }
   }
   .link__footer {
     margin-left: 30px;
@@ -172,6 +233,16 @@ footer {
     }
     a {
       color: $color-white;
+      @include breakpoints(tablet) {
+        margin-right: 20px;
+      }
+    }
+  }
+  .link__footer--item {
+    @include breakpoints(tablet) {
+      display: flex;
+      flex-direction: row;
+      padding-top: 70px;
     }
   }
 }

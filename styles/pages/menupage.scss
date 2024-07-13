@@ -1,21 +1,10 @@
-// .container {
-//   border: 1px solid green;
-//   position: relative;
-//   display: flex;
-//   flex-direction: column;
-//   width: 100%;
-//   height: 100%;
-// }
 body {
-  height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.container {
-  height: 95vh;
-}
+
 .menuHeader {
   display: block;
   &--items {
@@ -41,7 +30,7 @@ body {
 
 // MAIN
 main {
-  height: 60vh;
+  // height: 60vh;
   background-color: $color-background-lightgrey;
   // flex: 1;
   position: relative;
@@ -65,6 +54,7 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
+
     border: 1px solid $color-background-lightgrey;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -74,110 +64,116 @@ main {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
+
     h1 {
       font-family: $font-logo;
       font-size: 28px;
       font-style: italic;
       font-weight: 400;
     }
+    @include breakpoints(desktop-up) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "title title title" "name name name";
+    }
   }
 
   .restaurantMenuTitle {
-    display: inline-flex;
+    display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
+    grid-area: title;
   }
 
   .titleMenu {
     padding: 20px;
     margin-right: 5px;
+    // grid-area: name;
     h2 {
       text-transform: uppercase;
       font-weight: lighter;
       border-bottom: 3px solid $color-lightgreen;
-      width: 9%;
+      width: 3rem;
       line-height: 40px;
     }
-  }
-
-  .descriptionMenuWrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  .checkMenuWrapper {
-    background-color: $color-lightgreen;
-    width: 50px;
-    color: $color-white;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  .checkMenu {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    color: black;
+    @include breakpoints(tablet-up) {
+      width: 33, 33%;
+    }
   }
 
   .descriptionMenu {
-    min-width: 100%;
-    background: $color-white;
-    border: 1px solid $color-background-lightgrey;
-    border-radius: 30px;
-    margin-top: 20px;
+    padding: 0.5rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-    .dishWrapper {
-      margin-left: 10px;
+    background: $color-white;
+    border-radius: 0.75rem;
+    margin: 20px 0;
+    box-shadow: 0.25rem 0.25rem 1rem $color-black;
+    overflow: hidden;
+    cursor: pointer;
+    @include breakpoints(tablet-up) {
+      max-width: 80% !important;
+    }
+    // min-width: 100%;
+
+    &:hover {
+      .descriptionMenu__confirmation {
+        margin-right: -1rem;
+      }
+      .descriptionMenu__wrapIcon {
+        transform: rotate(0);
+      }
     }
   }
-  .restaurantPrice {
+  .descriptionMenu__header {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+    h4 {
+      margin: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  .descriptionMenu__description {
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .descriptionMenu__price {
     font-weight: bold;
     display: flex;
+    justify-content: flex-end;
     align-items: flex-end;
-    margin-right: 10px;
-    cursor: pointer;
-    &:hover,
-    &:active {
-      transform: translateX(-100px);
-      transition: transform 0.5s ease-in-out;
-    }
+    padding-left: 0.5rem;
   }
-
-  .checkMenuWrapper {
-    width: fit-content;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-
+  .descriptionMenu__confirmation {
     background-color: $color-lightgreen;
-    margin-top: 18px;
-    width: 5rem;
-    height: 58px;
+    margin: -1rem -5rem -1rem 1rem;
+    width: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition-duration: 0.5s;
   }
-
-  .checkMenu {
+  .descriptionMenu__wrapIcon {
+    height: 2rem;
+    width: 2rem;
     background-color: $color-white;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 100px;
+    transform: rotate(180deg);
     transition-duration: 0.5s;
   }
-
-  // &:hover &__wrapIcon {
-  //   transform: rotate(0);
-  // }
-
-  .checkMenu {
+  .descriptionMenu__icon {
     color: $color-lightgreen;
-    font-size: 50px;
   }
 
   .btnMenu {
@@ -187,5 +183,25 @@ main {
 }
 
 .menuFooter {
-  bottom: -90rem;
+  @include breakpoints(tablet-up) {
+    bottom: -75rem;
+  }
+  @include breakpoints(mobile) {
+    bottom: -75rem;
+  }
+  @include breakpoints(mobile-small) {
+    bottom: -75rem;
+  }
+  @include breakpoints(mobile-down) {
+    bottom: -77rem;
+  }
+  @include breakpoints(desktop) {
+    bottom: -34rem;
+  }
+  @include breakpoints(desktop-up) {
+    bottom: -34rem;
+  }
+  @include breakpoints(desktop-large) {
+    bottom: -75rem;
+  }
 }
