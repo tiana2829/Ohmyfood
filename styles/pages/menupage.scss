@@ -107,7 +107,7 @@ main {
     background: $color-white;
     border-radius: 0.75rem;
     margin: 20px 0;
-    box-shadow: 0.25rem 0.25rem 1rem $color-black;
+    box-shadow: 4px 4px 8px rgb(0 0 0 / 13%);
     overflow: hidden;
     cursor: pointer;
     @include breakpoints(tablet-up) {

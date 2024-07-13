@@ -521,7 +521,7 @@ main .descriptionMenu {
   background: #ffffff;
   border-radius: 0.75rem;
   margin: 20px 0;
-  box-shadow: 0.25rem 0.25rem 1rem #353535;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.13);
   overflow: hidden;
   cursor: pointer;
 }
