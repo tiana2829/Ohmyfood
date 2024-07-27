@@ -2,7 +2,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 .menuHeader {
@@ -30,9 +29,6 @@ body {
 
 // MAIN
 main {
-  // height: 60vh;
-  background-color: $color-background-lightgrey;
-  // flex: 1;
   position: relative;
   img {
     width: 100%;
@@ -40,41 +36,43 @@ main {
     object-fit: cover;
   }
   .menuContainer {
+    @include breakpoints(tablet) {
+      background-color: $color-background-lightgrey;
+      max-width: 80%;
+      margin: 0 auto;
+    }
     background-color: $color-background-lightgrey;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+
     @include centerElement;
     flex-direction: column;
     flex: 1;
-    position: absolute;
+    position: relative;
     margin-top: -150px;
     width: 100%;
   }
+
   .restaurantContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
-
     border: 1px solid $color-background-lightgrey;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    @include breakpoints(tablet) {
+      background-color: $color-background-lightgrey;
+      width: 100%;
+      margin-top: -50px;
+    }
   }
   .restaurantName {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-
-    h1 {
-      font-family: $font-logo;
-      font-size: 28px;
-      font-style: italic;
-      font-weight: 400;
-    }
-    @include breakpoints(desktop-up) {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-areas: "title title title" "name name name";
+    @include breakpoints(tablet) {
+      padding: 20px 150px 20px 150px;
     }
   }
 
@@ -82,22 +80,46 @@ main {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    grid-area: title;
+    @include breakpoints(tablet) {
+      justify-content: space-evenly;
+    }
+    h1 {
+      font-family: $font-logo;
+      //font-size: 28px;
+      font-style: italic;
+      font-weight: 400;
+      margin-block: 0;
+      @include breakpoints(mobile) {
+        font-size: 24px;
+        margin-left: 3px;
+      }
+      @include breakpoints(mobile-small) {
+        font-size: 22px;
+        margin-left: 3px;
+      }
+    }
+    .menu {
+      @include breakpoints(mobile-small) {
+        margin-right: 25px;
+      }
+      @include breakpoints(mobile) {
+        margin-right: 50px;
+      }
+      @include breakpoints(tablet) {
+        margin-right: 8px;
+      }
+    }
   }
 
   .titleMenu {
-    padding: 20px;
+    //padding: 20px;
     margin-right: 5px;
-    // grid-area: name;
     h2 {
       text-transform: uppercase;
       font-weight: lighter;
       border-bottom: 3px solid $color-lightgreen;
       width: 3rem;
       line-height: 40px;
-    }
-    @include breakpoints(tablet-up) {
-      width: 33, 33%;
     }
   }
 
@@ -107,13 +129,9 @@ main {
     background: $color-white;
     border-radius: 0.75rem;
     margin: 20px 0;
-    box-shadow: 4px 4px 8px rgb(0 0 0 / 13%);
+    box-shadow: 0.25rem 0.25rem 1rem $color-black;
     overflow: hidden;
     cursor: pointer;
-    @include breakpoints(tablet-up) {
-      max-width: 80% !important;
-    }
-    // min-width: 100%;
 
     &:hover {
       .descriptionMenu__confirmation {
@@ -125,25 +143,20 @@ main {
     }
   }
   .descriptionMenu__header {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    @include truncateText;
     flex: 1;
     h4 {
       margin: 0;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      @include truncateText;
     }
     p {
       font-size: 16px;
+      @include truncateText;
     }
   }
   .descriptionMenu__description {
     margin: 0;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    @include truncateText;
   }
   .descriptionMenu__price {
     font-weight: bold;
@@ -183,25 +196,5 @@ main {
 }
 
 .menuFooter {
-  @include breakpoints(tablet-up) {
-    bottom: -75rem;
-  }
-  @include breakpoints(mobile) {
-    bottom: -75rem;
-  }
-  @include breakpoints(mobile-small) {
-    bottom: -75rem;
-  }
-  @include breakpoints(mobile-down) {
-    bottom: -77rem;
-  }
-  @include breakpoints(desktop) {
-    bottom: -34rem;
-  }
-  @include breakpoints(desktop-up) {
-    bottom: -34rem;
-  }
-  @include breakpoints(desktop-large) {
-    bottom: -75rem;
-  }
+  bottom: -12.5rem;
 }

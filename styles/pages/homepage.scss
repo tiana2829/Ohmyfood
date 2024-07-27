@@ -78,19 +78,23 @@
   background-color: $color-white;
   display: flex;
   flex-direction: column;
-  .commande {
-    width: 100%;
-  }
+  padding: 0 20px 0 20px;
+  // .commande {
+  //   width: 100%;
+  //   @include breakpoints(mobile) {
+  //     padding: 0 5px 0 5px;
+  //   }
+  // }
 }
 .stepTitle,
 .restaurantTitle {
-  @include breakpoints(desktop-infinite) {
+  @include breakpoints(desktop) {
     text-align: center;
   }
 }
 .commande__list {
   counter-reset: compteurListe;
-  @include breakpoints(desktop-infinite) {
+  @include breakpoints(desktop) {
     display: flex;
     justify-content: center;
   }
@@ -108,7 +112,7 @@
     @include centerElement;
     color: white;
     counter-increment: compteurListe 1;
-    content: counter(compteurListe) " ";
+    content: counter(compteurListe) ' ';
     background: $color-primary;
     width: 30px;
     height: 30px;
@@ -141,14 +145,15 @@
 }
 .restaurant {
   margin: 0 auto;
+  padding: 0 20px 0 20px;
   // @include centerElement;
   .restaurantWrapper {
-    @include breakpoints(desktop-infinite) {
+    @include breakpoints(desktop) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
-    margin: auto;
+
     padding-bottom: 50px;
     position: relative;
     width: 100%;
@@ -207,19 +212,12 @@
 }
 
 .homepageFooter {
-  @include breakpoints(tablet) {
-    bottom: -110rem;
-  }
-  @include breakpoints(mobile) {
-    bottom: -110rem;
-  }
-  @include breakpoints(mobile-small) {
-    bottom: -110rem;
-  }
-  @include breakpoints(mobile-down) {
-    bottom: -103rem;
-  }
-  @include breakpoints(desktop-infinite) {
+  @include breakpoints(desktop) {
     bottom: -65rem;
   }
+
+  @include breakpoints(mobile-small) {
+    bottom: -103rem;
+  }
+  bottom: -110rem;
 }

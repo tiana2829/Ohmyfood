@@ -30,12 +30,17 @@ h3 {
   stroke-width: 5;
   cursor: pointer;
   position: relative;
-  margin-right: 75px;
 }
 .heart__icon svg {
   overflow: visible;
   width: 30px;
   margin-right: 5px;
+}
+@media only screen and (min-width: 320px) and (max-width: 414px) {
+  .heart__icon svg {
+    width: 20px;
+    margin-top: 5px;
+  }
 }
 .heart__icon path {
   stroke-dashoffset: 0;
@@ -179,6 +184,13 @@ footer .link__footer a {
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
   background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
 }
+.btnCallToAction:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  transition: 1s ease-in-out;
+  background: linear-gradient(190deg, #9356dc 10%, #ff79da 120%);
+  opacity: 0.8;
+  transition: opacity 40ms;
+}
 
 .loader__container {
   position: fixed;
@@ -256,9 +268,7 @@ footer .link__footer a {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-}
-.fonctionnement .commande {
-  width: 100%;
+  padding: 0 20px 0 20px;
 }
 
 @media (min-width: 1024px) {
@@ -326,9 +336,9 @@ footer .link__footer a {
 
 .restaurant {
   margin: 0 auto;
+  padding: 0 20px 0 20px;
 }
 .restaurant .restaurantWrapper {
-  margin: auto;
   padding-bottom: 50px;
   position: relative;
   width: 100%;
@@ -388,29 +398,17 @@ footer .link__footer a {
   margin-bottom: 20px;
 }
 
-@media (min-width: 769px) {
-  .homepageFooter {
-    bottom: -110rem;
-  }
-}
-@media only screen and (min-width: 415px) and (max-width: 768px) {
-  .homepageFooter {
-    bottom: -110rem;
-  }
-}
-@media only screen and (min-width: 375px) and (max-width: 414px) {
-  .homepageFooter {
-    bottom: -110rem;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 374px) {
-  .homepageFooter {
-    bottom: -103rem;
-  }
+.homepageFooter {
+  bottom: -110rem;
 }
 @media (min-width: 1024px) {
   .homepageFooter {
     bottom: -65rem;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 414px) {
+  .homepageFooter {
+    bottom: -103rem;
   }
 }
 
@@ -418,7 +416,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 .menuHeader {
@@ -445,7 +442,6 @@ body {
 }
 
 main {
-  background-color: #f6f6f6;
   position: relative;
 }
 main img {
@@ -462,9 +458,16 @@ main .menuContainer {
   align-items: center;
   flex-direction: column;
   flex: 1;
-  position: absolute;
+  position: relative;
   margin-top: -150px;
   width: 100%;
+}
+@media (min-width: 769px) {
+  main .menuContainer {
+    background-color: #f6f6f6;
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
 main .restaurantContainer {
   width: 100%;
@@ -474,33 +477,68 @@ main .restaurantContainer {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
+@media (min-width: 769px) {
+  main .restaurantContainer {
+    background-color: #f6f6f6;
+    width: 100%;
+    margin-top: -50px;
+  }
+}
 main .restaurantName {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
 }
-main .restaurantName h1 {
-  font-family: Shrikhand, sans-serif;
-  font-size: 28px;
-  font-style: italic;
-  font-weight: 400;
-}
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 769px) {
   main .restaurantName {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "title title title" "name name name";
+    padding: 20px 150px 20px 150px;
   }
 }
 main .restaurantMenuTitle {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  grid-area: title;
+}
+@media (min-width: 769px) {
+  main .restaurantMenuTitle {
+    justify-content: space-evenly;
+  }
+}
+main .restaurantMenuTitle h1 {
+  font-family: Shrikhand, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  margin-block: 0;
+}
+@media only screen and (min-width: 415px) and (max-width: 768px) {
+  main .restaurantMenuTitle h1 {
+    font-size: 24px;
+    margin-left: 3px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 414px) {
+  main .restaurantMenuTitle h1 {
+    font-size: 22px;
+    margin-left: 3px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 414px) {
+  main .restaurantMenuTitle .menu {
+    margin-right: 25px;
+  }
+}
+@media only screen and (min-width: 415px) and (max-width: 768px) {
+  main .restaurantMenuTitle .menu {
+    margin-right: 50px;
+  }
+}
+@media (min-width: 769px) {
+  main .restaurantMenuTitle .menu {
+    margin-right: 8px;
+  }
 }
 main .titleMenu {
-  padding: 20px;
   margin-right: 5px;
 }
 main .titleMenu h2 {
@@ -510,25 +548,15 @@ main .titleMenu h2 {
   width: 3rem;
   line-height: 40px;
 }
-@media (min-width: 769px) and (max-width: 991px) {
-  main .titleMenu {
-    width: 33, 33%;
-  }
-}
 main .descriptionMenu {
   padding: 0.5rem;
   display: flex;
   background: #ffffff;
   border-radius: 0.75rem;
   margin: 20px 0;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.13);
+  box-shadow: 0.25rem 0.25rem 1rem #353535;
   overflow: hidden;
   cursor: pointer;
-}
-@media (min-width: 769px) and (max-width: 991px) {
-  main .descriptionMenu {
-    max-width: 80% !important;
-  }
 }
 main .descriptionMenu:hover .descriptionMenu__confirmation {
   margin-right: -1rem;
@@ -538,24 +566,27 @@ main .descriptionMenu:hover .descriptionMenu__wrapIcon {
 }
 main .descriptionMenu__header {
   white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
   flex: 1;
 }
 main .descriptionMenu__header h4 {
   margin: 0;
   white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .descriptionMenu__header p {
   font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .descriptionMenu__description {
   margin: 0;
   white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .descriptionMenu__price {
   font-weight: bold;
@@ -592,38 +623,6 @@ main .btnCommande {
   min-height: 90px;
 }
 
-@media (min-width: 769px) and (max-width: 991px) {
-  .menuFooter {
-    bottom: -75rem;
-  }
-}
-@media only screen and (min-width: 415px) and (max-width: 768px) {
-  .menuFooter {
-    bottom: -75rem;
-  }
-}
-@media only screen and (min-width: 375px) and (max-width: 414px) {
-  .menuFooter {
-    bottom: -75rem;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 374px) {
-  .menuFooter {
-    bottom: -77rem;
-  }
-}
-@media (min-width: 992px) and (max-width: 1023px) {
-  .menuFooter {
-    bottom: -34rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1440px) {
-  .menuFooter {
-    bottom: -34rem;
-  }
-}
-@media (min-width: 1441px) {
-  .menuFooter {
-    bottom: -75rem;
-  }
+.menuFooter {
+  bottom: -12.5rem;
 }
