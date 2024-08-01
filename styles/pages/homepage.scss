@@ -20,16 +20,18 @@
   z-index: 1001;
   width: 60px;
   aspect-ratio: 1;
-  background: linear-gradient(#dc1818 0 0) bottom/100% 0% no-repeat #ccc;
-  -webkit-mask: radial-gradient(circle at 60% 65%, #000 62%, #0000 65%) top left,
-    radial-gradient(circle at 40% 65%, #000 62%, #0000 65%) top right,
-    linear-gradient(to bottom left, #000 42%, #0000 43%) bottom left,
-    linear-gradient(to bottom right, #000 42%, #0000 43%) bottom right;
-  -webkit-mask-size: 50% 50%;
-  -webkit-mask-repeat: no-repeat;
-  animation: heartFill 3s infinite linear;
+  background-image: linear-gradient(
+    to top,
+    $color-primary 0%,
+    $color-secondary 100%
+  );
+  background-position: bottom;
+  background-size: 100% 0;
+  background-repeat: no-repeat;
+  background-color: #cccccc;
+  animation: boxFill 3s infinite linear;
 }
-
+//animation loader
 #loader-wrap {
   -moz-animation: stopLoader 0s ease-in 3s forwards;
   -webkit-animation: stopLoader 0s ease-in 3s forwards;
@@ -38,7 +40,7 @@
   animation-fill-mode: forwards;
 }
 
-@keyframes heartFill {
+@keyframes boxFill {
   90%,
   100% {
     background-size: 100% 100%;
@@ -52,7 +54,7 @@
     visibility: hidden;
   }
 }
-
+//localisation géorgaphique
 .location {
   @include centerElement;
   font-family: $font-content;
@@ -62,31 +64,25 @@
   background: $color-background-grey;
 }
 
-.menuWrapper {
+.bookingContainer {
   text-align: center;
   background-color: $color-background-lightgrey;
   padding-top: 50px;
   min-height: 250px;
   width: 100%;
-  .menuDescription {
+  .bookingDescription {
     font-weight: 300;
     margin: 2.2rem 0;
   }
 }
 
-.fonctionnement {
+.fonctionContainer {
   background-color: $color-white;
   display: flex;
   flex-direction: column;
   padding: 0 20px 0 20px;
-  // .commande {
-  //   width: 100%;
-  //   @include breakpoints(mobile) {
-  //     padding: 0 5px 0 5px;
-  //   }
-  // }
 }
-.stepTitle,
+.fonctionTitle,
 .restaurantTitle {
   @include breakpoints(desktop) {
     text-align: center;
@@ -100,7 +96,7 @@
   }
 }
 
-.commande__item {
+.choice__item {
   padding: 25px;
   margin: 30px 15px 30px 15px;
   box-shadow: 4px 4px 8px rgb(0 0 0 / 13%);
@@ -146,8 +142,8 @@
 .restaurant {
   margin: 0 auto;
   padding: 0 20px 0 20px;
-  // @include centerElement;
-  .restaurantWrapper {
+
+  .restaurantContainer {
     @include breakpoints(desktop) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -168,9 +164,7 @@
         border: 1px solid $color-background-lightgrey;
         box-shadow: 0px 4.01px 15.04px 0px #0000001a;
         min-width: 100%;
-        // height: 350px;
         gap: 10px;
-        opacity: 0px;
         text-decoration: none;
       }
 
@@ -197,13 +191,13 @@
         }
       }
 
-      .restaurant__info {
+      .restaurant__name {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin: 20px 20px auto 20px;
         color: $color-black;
-        .item {
+        .infoItem {
           margin-bottom: 20px;
         }
       }

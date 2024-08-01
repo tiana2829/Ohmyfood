@@ -42,7 +42,7 @@ $color-green: #008766;
   justify-content: center;
   align-items: center;
 }
-
+//Ellipse pour couper le texte et faire les petits points
 @mixin truncateText {
   white-space: nowrap;
   overflow: hidden;
@@ -81,7 +81,6 @@ h3 {
   stroke-width: 5;
   cursor: pointer;
   position: relative;
-  //margin-right: 75px;
 
   svg {
     overflow: visible;

@@ -214,11 +214,12 @@ footer .link__footer a {
   z-index: 1001;
   width: 60px;
   aspect-ratio: 1;
-  background: linear-gradient(#dc1818 0 0) bottom/100% 0% no-repeat #ccc;
-  -webkit-mask: radial-gradient(circle at 60% 65%, #000 62%, rgba(0, 0, 0, 0) 65%) top left, radial-gradient(circle at 40% 65%, #000 62%, rgba(0, 0, 0, 0) 65%) top right, linear-gradient(to bottom left, #000 42%, rgba(0, 0, 0, 0) 43%) bottom left, linear-gradient(to bottom right, #000 42%, rgba(0, 0, 0, 0) 43%) bottom right;
-  -webkit-mask-size: 50% 50%;
-  -webkit-mask-repeat: no-repeat;
-  animation: heartFill 3s infinite linear;
+  background-image: linear-gradient(to top, #9356dc 0%, #ff79da 100%);
+  background-position: bottom;
+  background-size: 100% 0;
+  background-repeat: no-repeat;
+  background-color: #cccccc;
+  animation: boxFill 3s infinite linear;
 }
 
 #loader-wrap {
@@ -229,7 +230,7 @@ footer .link__footer a {
   animation-fill-mode: forwards;
 }
 
-@keyframes heartFill {
+@keyframes boxFill {
   90%, 100% {
     background-size: 100% 100%;
   }
@@ -252,19 +253,19 @@ footer .link__footer a {
   background: #eaeaea;
 }
 
-.menuWrapper {
+.bookingContainer {
   text-align: center;
   background-color: #f6f6f6;
   padding-top: 50px;
   min-height: 250px;
   width: 100%;
 }
-.menuWrapper .menuDescription {
+.bookingContainer .bookingDescription {
   font-weight: 300;
   margin: 2.2rem 0;
 }
 
-.fonctionnement {
+.fonctionContainer {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -272,7 +273,7 @@ footer .link__footer a {
 }
 
 @media (min-width: 1024px) {
-  .stepTitle,
+  .fonctionTitle,
   .restaurantTitle {
     text-align: center;
   }
@@ -288,7 +289,7 @@ footer .link__footer a {
   }
 }
 
-.commande__item {
+.choice__item {
   padding: 25px;
   margin: 30px 15px 30px 15px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.13);
@@ -297,7 +298,7 @@ footer .link__footer a {
   display: flex;
   position: relative;
 }
-.commande__item:before {
+.choice__item:before {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -314,13 +315,13 @@ footer .link__footer a {
   left: 0;
   transform: translate(-50%, 50%);
 }
-.commande__item:hover {
+.choice__item:hover {
   background: linear-gradient(#9356dc 0%, #f6f3ff 100%);
 }
-.commande__item:hover .icon {
+.choice__item:hover .icon {
   color: #9356dc;
 }
-.commande__item .icon {
+.choice__item .icon {
   margin-right: 10px;
 }
 
@@ -338,47 +339,46 @@ footer .link__footer a {
   margin: 0 auto;
   padding: 0 20px 0 20px;
 }
-.restaurant .restaurantWrapper {
+.restaurant .restaurantContainer {
   padding-bottom: 50px;
   position: relative;
   width: 100%;
 }
 @media (min-width: 1024px) {
-  .restaurant .restaurantWrapper {
+  .restaurant .restaurantContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 }
-.restaurant .restaurantWrapper article {
+.restaurant .restaurantContainer article {
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-top: 30px;
 }
-.restaurant .restaurantWrapper article .card {
+.restaurant .restaurantContainer article .card {
   background: #ffffff;
   border-radius: 30px;
   border: 1px solid #f6f6f6;
   box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
   min-width: 100%;
   gap: 10px;
-  opacity: 0px;
   text-decoration: none;
 }
-.restaurant .restaurantWrapper article .restaurant__picture {
+.restaurant .restaurantContainer article .restaurant__picture {
   position: relative;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
-.restaurant .restaurantWrapper article .restaurant__picture img {
+.restaurant .restaurantContainer article .restaurant__picture img {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   max-height: 250px;
   width: 100%;
   object-fit: cover;
 }
-.restaurant .restaurantWrapper article .restaurant__picture span {
+.restaurant .restaurantContainer article .restaurant__picture span {
   position: absolute;
   top: 1rem;
   right: 1.7rem;
@@ -387,14 +387,14 @@ footer .link__footer a {
   color: #008766;
   border-radius: 2px;
 }
-.restaurant .restaurantWrapper article .restaurant__info {
+.restaurant .restaurantContainer article .restaurant__name {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 20px 20px auto 20px;
   color: #353535;
 }
-.restaurant .restaurantWrapper article .restaurant__info .item {
+.restaurant .restaurantContainer article .restaurant__name .infoItem {
   margin-bottom: 20px;
 }
 
@@ -469,7 +469,7 @@ main .menuContainer {
     margin: 0 auto;
   }
 }
-main .restaurantContainer {
+main .restaurantMainContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -478,63 +478,63 @@ main .restaurantContainer {
   border-top-right-radius: 30px;
 }
 @media (min-width: 769px) {
-  main .restaurantContainer {
+  main .restaurantMainContainer {
     background-color: #f6f6f6;
     width: 100%;
     margin-top: -50px;
   }
 }
-main .restaurantName {
+main .restaurantMenuContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
 }
 @media (min-width: 769px) {
-  main .restaurantName {
+  main .restaurantMenuContainer {
     padding: 20px 150px 20px 150px;
   }
 }
-main .restaurantMenuTitle {
+main .titleRestaurant {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 @media (min-width: 769px) {
-  main .restaurantMenuTitle {
+  main .titleRestaurant {
     justify-content: space-evenly;
   }
 }
-main .restaurantMenuTitle h1 {
+main .titleRestaurant h1 {
   font-family: Shrikhand, sans-serif;
   font-style: italic;
   font-weight: 400;
   margin-block: 0;
 }
 @media only screen and (min-width: 415px) and (max-width: 768px) {
-  main .restaurantMenuTitle h1 {
+  main .titleRestaurant h1 {
     font-size: 24px;
     margin-left: 3px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 414px) {
-  main .restaurantMenuTitle h1 {
+  main .titleRestaurant h1 {
     font-size: 22px;
     margin-left: 3px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 414px) {
-  main .restaurantMenuTitle .menu {
+  main .titleRestaurant .menu {
     margin-right: 25px;
   }
 }
 @media only screen and (min-width: 415px) and (max-width: 768px) {
-  main .restaurantMenuTitle .menu {
+  main .titleRestaurant .menu {
     margin-right: 50px;
   }
 }
 @media (min-width: 769px) {
-  main .restaurantMenuTitle .menu {
+  main .titleRestaurant .menu {
     margin-right: 8px;
   }
 }
