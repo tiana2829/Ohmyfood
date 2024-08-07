@@ -82,21 +82,6 @@ h3 {
   cursor: pointer;
   position: relative;
 
-  svg {
-    overflow: visible;
-    width: 30px;
-    margin-right: 5px;
-    @include breakpoints(mobile-small) {
-      width: 20px;
-      margin-top: 5px;
-    }
-  }
-
-  path {
-    stroke-dashoffset: 0;
-    transform-origin: center;
-  }
-
   .heart-background {
     position: absolute;
     left: 0;
@@ -104,15 +89,31 @@ h3 {
     z-index: -1;
     stroke: none;
   }
-
-  .heart-main:hover path {
-    animation: stroke-animation 0.4s ease-in-out forwards;
-  }
-
-  .heart-main:hover ~ .heart-background path {
-    animation: fade-animation 0.4s ease-in-out forwards;
-    stroke: none;
-  }
+}
+// Loader
+// @keyframes fade-animation {
+//   70% {
+//     fill: transparent;
+//     transform: scale(1);
+//   }
+//   80% {
+//     fill: $color-primary;
+//     transform: scale(1.1);
+//     opacity: 1;
+//   }
+//   90% {
+//     opacity: 1;
+//   }
+//   100% {
+//     transform: scale(2.5);
+//     opacity: 0;
+//   }
+// }
+// mixin pour le gradient du coeur
+@mixin heart-gradient($direction, $gradient1, $gradient2) {
+  background: linear-gradient($direction, $gradient1, $gradient2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes stroke-animation {
@@ -128,34 +129,40 @@ h3 {
     transform: scale(1);
   }
   80% {
-    fill: $color-primary;
     transform: scale(1.1);
+    transition: 5s ease-in-out forwards;
   }
   90% {
     transform: scale(1);
   }
   100% {
     stroke-dashoffset: 310;
-    fill: $color-primary;
+    transition: 5s ease-in-out forwards;
   }
 }
 
-@keyframes fade-animation {
-  70% {
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: $color-primary;
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
+// heart icon
+.heart {
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  animation: stroke-animation 5s ease-in-out forwards;
+  transition: fill 0.3s;
+  color: $color-white;
+  // Pour afficher la bordure du coeur
+  background-color: black;
+  background-clip: text;
+  -web-background-clip: text;
+  border: 1px solid transparent;
+
+  &:hover {
+    -webkit-text-fill-color: initial;
+    background: none;
+    color: transparent;
+    @include heart-gradient(to bottom, $color-primary, $color-secondary);
+    &::before {
+      border-color: currentColor;
+    }
   }
 }
 

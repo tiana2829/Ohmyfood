@@ -31,33 +31,11 @@ h3 {
   cursor: pointer;
   position: relative;
 }
-.heart__icon svg {
-  overflow: visible;
-  width: 30px;
-  margin-right: 5px;
-}
-@media only screen and (min-width: 320px) and (max-width: 414px) {
-  .heart__icon svg {
-    width: 20px;
-    margin-top: 5px;
-  }
-}
-.heart__icon path {
-  stroke-dashoffset: 0;
-  transform-origin: center;
-}
 .heart__icon .heart-background {
   position: absolute;
   left: 0;
   right: 0;
   z-index: -1;
-  stroke: none;
-}
-.heart__icon .heart-main:hover path {
-  animation: stroke-animation 0.4s ease-in-out forwards;
-}
-.heart__icon .heart-main:hover ~ .heart-background path {
-  animation: fade-animation 0.4s ease-in-out forwards;
   stroke: none;
 }
 
@@ -74,35 +52,41 @@ h3 {
     transform: scale(1);
   }
   80% {
-    fill: #9356dc;
     transform: scale(1.1);
+    transition: 5s ease-in-out forwards;
   }
   90% {
     transform: scale(1);
   }
   100% {
     stroke-dashoffset: 310;
-    fill: #9356dc;
+    transition: 5s ease-in-out forwards;
   }
 }
-@keyframes fade-animation {
-  70% {
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: #9356dc;
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
-  }
+.heart {
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  animation: stroke-animation 5s ease-in-out forwards;
+  transition: fill 0.3s;
+  color: #ffffff;
+  background-color: black;
+  background-clip: text;
+  -web-background-clip: text;
+  border: 1px solid transparent;
 }
+.heart:hover {
+  -webkit-text-fill-color: initial;
+  background: none;
+  color: transparent;
+  background: linear-gradient(to bottom, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.heart:hover::before {
+  border-color: currentColor;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -618,12 +602,6 @@ main .descriptionMenu__header h4 {
 }
 main .descriptionMenu__header p {
   font-size: 16px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-main .descriptionMenu__description {
-  margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -120,7 +120,7 @@ main {
       line-height: 40px;
     }
   }
-
+  // Affichage progressif des éléments du menu
   @keyframes fadeInUp {
     0% {
       opacity: 0;
@@ -195,10 +195,10 @@ main {
       @include truncateText;
     }
   }
-  .descriptionMenu__description {
-    margin: 0;
-    @include truncateText;
-  }
+  // .descriptionMenu__description {
+  //   margin: 0;
+  //   @include truncateText;
+  // }
   .descriptionMenu__price {
     font-weight: bold;
     display: flex;
