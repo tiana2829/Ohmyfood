@@ -175,7 +175,7 @@
         img {
           border-top-left-radius: 30px;
           border-top-right-radius: 30px;
-          max-height: 250px;
+          height: 200px;
           width: 100%;
           object-fit: cover;
         }
@@ -207,11 +207,11 @@
 
 .homepageFooter {
   @include breakpoints(desktop) {
-    bottom: -65rem;
+    bottom: -60rem;
   }
 
   @include breakpoints(mobile-small) {
-    bottom: -103rem;
+    bottom: -97rem;
   }
-  bottom: -110rem;
+  bottom: -98rem;
 }

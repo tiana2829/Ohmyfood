@@ -358,7 +358,7 @@ footer .link__footer a {
 .restaurant .restaurantContainer article .restaurant__picture img {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  max-height: 250px;
+  height: 200px;
   width: 100%;
   object-fit: cover;
 }
@@ -383,16 +383,16 @@ footer .link__footer a {
 }
 
 .homepageFooter {
-  bottom: -110rem;
+  bottom: -98rem;
 }
 @media (min-width: 1024px) {
   .homepageFooter {
-    bottom: -65rem;
+    bottom: -60rem;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 414px) {
   .homepageFooter {
-    bottom: -103rem;
+    bottom: -97rem;
   }
 }
 
