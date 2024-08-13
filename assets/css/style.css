@@ -31,43 +31,21 @@ h3 {
   cursor: pointer;
   position: relative;
 }
-.heart__icon .heart-background {
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  stroke: none;
-}
 
-@keyframes stroke-animation {
+@keyframes heart-animation {
   0% {
-    stroke-dashoffset: 0;
-  }
-  30% {
-    stroke-dashoffset: 155;
-  }
-  60% {
-    stroke-dashoffset: 310;
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
     transform: scale(1.1);
-    transition: 5s ease-in-out forwards;
-  }
-  90% {
-    transform: scale(1);
+    transition: 0.5s ease;
   }
   100% {
-    stroke-dashoffset: 310;
-    transition: 5s ease-in-out forwards;
+    transform: scale(1.2);
+    transition: 0.5s ease;
   }
 }
 .heart {
   font-size: 30px;
   font-weight: bold;
   display: inline-block;
-  animation: stroke-animation 5s ease-in-out forwards;
   transition: fill 0.3s;
   color: #ffffff;
   background-color: black;
@@ -79,6 +57,7 @@ h3 {
   -webkit-text-fill-color: initial;
   background: none;
   color: transparent;
+  animation: heart-animation 0.5s ease;
   background: linear-gradient(to bottom, #9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
